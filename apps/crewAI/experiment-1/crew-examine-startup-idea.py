@@ -1,14 +1,14 @@
-from dotenv import load_dotenv
 import os
+
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-
-# Access the environment variable
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 def hello():
-    return f"\nHello from experiment 1 - {openai_api_key}\n"
+    return f"\nEXAMPLE: Sequentially run three agents to evaluate an idea for a business startup and generate a business plan.\n"
 
 if __name__ == "__main__":
     print(hello())
+

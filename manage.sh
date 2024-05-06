@@ -8,7 +8,7 @@ set -e
 
 # Experiment 1
 : ${APP_DIR:="apps/crewAI/experiment-1"}
-: ${APP_SCRIPT:="hello.py"}
+: ${APP_SCRIPT:="crew-examine-startup-idea.py"}
 
 # Define the directory for the virtual environment
 VENV_DIR=".venv"
