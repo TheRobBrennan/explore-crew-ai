@@ -77,7 +77,13 @@ task1 = Task(
 		Write a detailed report with description of what the ideal customer might look like, and how to reach the widest possible audience. The report has to 
 		be concise with at least 10 bullet points and it has to address the most important areas when it comes to marketing this type of business.
     """,
+
+    # The agent responsible for executing this task
     agent=market_research_analyst,
+
+    # Expected output
+    expected_output="""A detailed report that outlines the market demand for the product, the ideal customer profile, and a marketing strategy to reach the widest possible audience."""
+
 )
 
 task2 = Task(
@@ -85,7 +91,12 @@ task2 = Task(
 		with description of which technologies the business needs to use in order to make High Quality T shirts. The report has to be concise with 
 		at least 10  bullet points and it has to address the most important areas when it comes to manufacturing this type of business. 
     """,
+
+    # The agent responsible for executing this task
     agent=technologist,
+
+    # Expected output
+    expected_output="""A detailed report that outlines the technological requirements for the business, including the type of technologies needed to produce the product.""",    
 )
 
 task3 = Task(
@@ -94,12 +105,31 @@ task3 = Task(
 		The business plan has to be concise with 
 		at least 10  bullet points, 5 goals and it has to contain a time schedule for which goal should be achieved and when.
     """,
+
+    # The agent responsible for executing this task
     agent=business_consultant,
+
+    # Expected output
+    expected_output="""A detailed business plan that integrates the marketing and technological reports, outlining a sustainable and profitable business model for the product."""
 )
 
-def hello():
-    return f"\nEXAMPLE: Sequentially run three agents to evaluate an idea for a business startup and generate a business plan.\n"
+# Create a crew of agents and tasks
+crew = Crew(
+    # Define the agents and tasks for the crew
+    agents=[market_research_analyst, technologist, business_consultant],
+    tasks=[task1, task2, task3],
+
+    # Verbose output
+    verbose=2,
+
+    # Sequential process will have tasks executed one after the other and the outcome of the previous one is passed as extra content into the next task
+    process=Process.sequential, 
+)
+
+def run():
+    result = crew.kickoff()
+    print(f"\nThe crew has completed their tasks:\n\n{result}")
 
 if __name__ == "__main__":
-    print(hello())
+    run()
 
