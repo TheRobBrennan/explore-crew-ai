@@ -1,22 +1,27 @@
 {
-  "name": "explore-python",
+  "name": "explore-crew-ai",
   "version": "0.0.0",
   "description": "This project will explore getting started developing with [Python](https://www.python.org) as quickly as possible using [Visual Studio Code](https://code.visualstudio.com) and containers.",
   "scripts": {
-    "setup": "clear && ./manage.sh setup",
-    "start": "clear && ./manage.sh start",
-    "test": "clear && ./manage.sh test",
-    "test:coverage": "clear && ./manage.sh test --coverage",
-    "destroy": "clear && ./manage.sh destroy"
+    "setup": "npm run experiment-1:setup",
+    "start": "npm run experiment-1:start",
+    "test": "npm run experiment-1:test",
+    "test:coverage": "npm run experiment-1:test:coverage",
+    "destroy": "npm run experiment-1:destroy",
+    "experiment-1:setup": "clear && ./manage.sh setup",
+    "experiment-1:start": "clear && ./manage.sh start",
+    "experiment-1:test": "clear && ./manage.sh test",
+    "experiment-1:test:coverage": "clear && ./manage.sh test --coverage",
+    "experiment-1:destroy": "clear && ./manage.sh destroy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheRobBrennan/explore-python.git"
+    "url": "git+https://github.com/TheRobBrennan/explore-crew-ai.git"
   },
   "author": "Rob Brennan <rob@therobbrennan.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TheRobBrennan/explore-python/issues"
+    "url": "https://github.com/TheRobBrennan/explore-crew-ai/issues"
   },
-  "homepage": "https://github.com/TheRobBrennan/explore-python#readme"
+  "homepage": "https://github.com/TheRobBrennan/explore-crew-ai#readme"
 }
