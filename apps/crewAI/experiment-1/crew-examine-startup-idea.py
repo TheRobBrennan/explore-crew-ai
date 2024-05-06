@@ -1,5 +1,6 @@
 import os
 
+from crewai import Agent, Task, Process, Crew
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
