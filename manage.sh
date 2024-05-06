@@ -5,8 +5,10 @@ set -e
 
 # Check if APP_DIR and APP_SCRIPT environment variables are set; default to hello-world
 # APP_DIR="myappdir" APP_SCRIPT="myscript.py" ./manage.sh
-: ${APP_DIR:="apps/hello_world"}
-: ${APP_SCRIPT:="hello_world.py"}
+
+# Experiment 1
+: ${APP_DIR:="apps/crewAI/experiment-1"}
+: ${APP_SCRIPT:="hello.py"}
 
 # Define the directory for the virtual environment
 VENV_DIR=".venv"
