@@ -38,24 +38,6 @@ If you're more familiar with JavaScript development and have `npm` installed, we
 
 Utilizing these npm scripts, you can manage the Python application using commands you're familiar with from the JavaScript ecosystem.
 
-### EXAMPLE: Hello, world
-
-What project starter would be complete without an obligatory "Hello, world!" example? 🤓
-
-```sh
-(.venv) hello-world % python3 hello_world.py 
-Hello, world!
-```
-
-This project also includes having an ability to debug code using VS Code - and example unit tests to get you started:
-
-![](./apps/hello_world/__screenshots__/vscode-debug-example-00.png)
-![](./apps/hello_world/__screenshots__/vscode-debug-example-01.png)
-
-![](./apps/hello_world/__screenshots__/test-coverage-example-00.png)
-![](./apps/hello_world/__screenshots__/test-coverage-example-01.png)
-![](./apps/hello_world/__screenshots__/test-coverage-example-02.png)
-
 ## Python cheat sheet
 
 If you're just getting started with Python, here are snippets of commands that you may find helpful to get you up and running in no time.
