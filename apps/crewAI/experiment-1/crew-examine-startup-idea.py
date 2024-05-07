@@ -13,13 +13,14 @@ market_research_analyst = Agent(
     role="Market Research Analyst",
 
     # Goal of the agent
-    goal="Find out how big the demand is for my products and suggest how to reach the widest possible customer base.",
+    goal="Find out how much demand there is for my products and suggest ways to reach the widest possible customer base.",
 
     # Backstory of the agent
-    backstory="""You are an expert at understanding the market demand, target audience, and competition. This is crucial for 
-		validating whether an idea fulfills a market need and has the potential to attract a wide audience. You are good at coming up
-		with ideas on how to appeal to widest possible audience.
-		""",
+    backstory="""
+        You are an expert at understanding market demand, target audience, and competition. This is crucial for validating 
+        whether an idea fulfills a market need and has the potential to attract a wide audience. 
+            
+        You are also good at developing ideas that appeal to the broadest possible audience.""",
 
     # Display verbose output
     verbose=True,
@@ -34,14 +35,16 @@ technologist = Agent(
     role="Technology Expert",
 
     # Goal of the agent
-    goal="Make an assessment on how technologically feasable the company is, and what type of technologies the company needs to adopt in order to succeed.",
+    goal="Identify the best technologies and processes to use to create our products and services.",
 
     # Backstory of the agent
-    backstory="""You are a visionary in the realm of technology, with a deep understanding of both current and emerging technological trends. Your 
-		expertise lies not just in knowing the technology but in foreseeing how it can be leveraged to solve real-world problems and drive business innovation.
-		You have a knack for identifying which technological solutions best fit different business models and needs, ensuring that companies stay ahead of 
-		the curve. Your insights are crucial in aligning technology with business strategies, ensuring that the technological adoption not only enhances 
-		operational efficiency but also provides a competitive edge in the market.""",
+    backstory="""
+        You are a visionary in the realm of technology, with a deep understanding of current and emerging technological trends. 
+        Your expertise lies in knowing the technology and foreseeing how it can be leveraged to solve real-world problems and drive 
+        business innovation. You have a knack for identifying which technological solutions best fit different business models and needs, 
+        ensuring that companies stay ahead of the curve. Your insights are crucial in aligning technology with business strategies, 
+        ensuring that technological adoption enhances operational efficiency and provides a competitive edge in the market.
+    """,
     
     # Display verbose output
     verbose=True,
@@ -56,13 +59,15 @@ business_consultant = Agent(
     role="Business Development Consultant",
 
     # Goal of the agent
-    goal="Evaluate and advise on the business model, scalability, and potential revenue streams to ensure long-term sustainability and profitability",
+    goal="Evaluate and advise on the business model, scalability, and potential revenue streams to ensure long-term sustainability and profitability.",
 
     # Backstory of the agent
-    backstory="""You are a seasoned professional with expertise in shaping business strategies. Your insight is essential for turning innovative ideas 
-		into viable business models. You have a keen understanding of various industries and are adept at identifying and developing potential revenue streams. 
-		Your experience in scalability ensures that a business can grow without compromising its values or operational efficiency. Your advice is not just
-		about immediate gains but about building a resilient and adaptable business that can thrive in a changing market.""",
+    backstory="""
+        You are a seasoned professional with expertise in shaping business strategies. Your insight is essential for turning innovative ideas into viable 
+        business models. You have a keen understanding of various industries and are adept at identifying and developing potential revenue streams. 
+        Your experience in scalability ensures that a business can grow without compromising its values or operational efficiency. Your advice is not just
+        about immediate gains but building a resilient and adaptable business that can thrive in a changing market.
+    """,
 
     # Display verbose output
     verbose=True,
@@ -73,44 +78,54 @@ business_consultant = Agent(
 
 # Define tasks for our agents to run
 task1 = Task(
-    description="""Analyze what the market demand for plugs for holes in crocs (shoes) so that this iconic footware looks less like swiss cheese. 
-		Write a detailed report with description of what the ideal customer might look like, and how to reach the widest possible audience. The report has to 
-		be concise with at least 10 bullet points and it has to address the most important areas when it comes to marketing this type of business.
+    description="""
+        Analyze the market demand for plugs for holes in Crocs (shoes) so that this iconic footwear looks less like Swiss cheese. 
+        Write a detailed report describing the ideal customer and how to reach the broadest possible audience. The report has to be concise, 
+        with at least ten bullet points, and address the most critical areas when marketing this type of business.
     """,
 
     # The agent responsible for executing this task
     agent=market_research_analyst,
 
     # Expected output
-    expected_output="""A detailed report that outlines the market demand for the product, the ideal customer profile, and a marketing strategy to reach the widest possible audience."""
+    expected_output="""
+        A detailed report outlining the market demand for the product, the ideal customer profile, and a marketing strategy to reach the broadest possible audience.        
+    """
 
 )
 
 task2 = Task(
-    description="""Analyze how to produce plugs for crocs (shoes) so that this iconic footware looks less like swiss cheese.. Write a detailed report 
-		with description of which technologies the business needs to use in order to make High Quality T shirts. The report has to be concise with 
-		at least 10  bullet points and it has to address the most important areas when it comes to manufacturing this type of business. 
+    description="""
+        Analyze how to produce plugs for Crocs (shoes) so that this iconic footwear looks less like Swiss cheese. 
+        Write a detailed report describing which technologies the business needs to use to make High-Quality T-shirts. 
+        The report has to be concise with at least ten bullet points and address the most critical areas when manufacturing this type of business. 
     """,
 
     # The agent responsible for executing this task
     agent=technologist,
 
     # Expected output
-    expected_output="""A detailed report that outlines the technological requirements for the business, including the type of technologies needed to produce the product.""",    
+    expected_output="""
+        A detailed report outlines the business' technological requirements, including the type of technologies needed to produce the product.
+    """,    
 )
 
 task3 = Task(
-    description="""Analyze and summarize marketing and technological report and write a detailed business plan with 
-		description of how to make a sustainable and profitable "plugs for crocs (shoes) so that this iconic footware looks less like swiss cheese" business. 
-		The business plan has to be concise with 
-		at least 10  bullet points, 5 goals and it has to contain a time schedule for which goal should be achieved and when.
+    description="""
+        Analyze and summarize marketing and technological reports and write a detailed business plan describing how to make sustainable and profitable 
+        "plugs for Crocs (shoes) so that this iconic footwear looks less like Swiss cheese" business. 
+        
+        The business plan has to be concise with at least ten bullet points and five goals and must contain 
+        a schedule for which goals should be achieved and when starting no earlier than mid-May 2024.
     """,
 
     # The agent responsible for executing this task
     agent=business_consultant,
 
     # Expected output
-    expected_output="""A detailed business plan that integrates the marketing and technological reports, outlining a sustainable and profitable business model for the product."""
+    expected_output="""
+        A detailed business plan that integrates the marketing and technological reports, outlining a sustainable and profitable business model for the product.
+    """
 )
 
 # Create a crew of agents and tasks
