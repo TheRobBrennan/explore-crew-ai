@@ -1,10 +1,10 @@
 from crewai import Crew, Process
-from agents.market_research_analyst import create_market_research_analyst
-from agents.technologist import create_technologist
-from agents.business_consultant import create_business_consultant
-from tasks.analyze_market_demand import create_analyze_market_demand_task
-from tasks.analyze_technology_requirements import create_analyze_technology_requirements_task
-from tasks.create_business_plan import create_business_plan_task
+from agents.market_research_analyst.market_research_analyst import create_market_research_analyst
+from agents.technologist.technologist import create_technologist
+from agents.business_consultant.business_consultant import create_business_consultant
+from tasks.analyze_market_demand.analyze_market_demand import create_analyze_market_demand_task
+from tasks.analyze_technology_requirements.analyze_technology_requirements import create_analyze_technology_requirements_task
+from tasks.create_business_plan.create_business_plan import create_business_plan_task
 
 def create_crew():
     market_research_analyst = create_market_research_analyst()

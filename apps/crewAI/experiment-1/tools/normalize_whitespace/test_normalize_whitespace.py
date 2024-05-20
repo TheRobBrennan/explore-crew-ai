@@ -1,4 +1,4 @@
-from tools.normalize_whitespace import normalize_whitespace
+from tools.normalize_whitespace.normalize_whitespace import normalize_whitespace
 
 def test_normalize_whitespace_basic():
     assert normalize_whitespace("Hello   World") == "Hello World"

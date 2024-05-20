@@ -1,4 +1,4 @@
-from tools.load_environment_variables import load_env_variables
+from tools.load_environment_variables.load_environment_variables import load_env_variables
 from crew.create_crew import run_crew
 
 def main():

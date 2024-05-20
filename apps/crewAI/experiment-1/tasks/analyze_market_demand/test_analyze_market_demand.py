@@ -1,6 +1,6 @@
-from tasks.analyze_market_demand import create_analyze_market_demand_task, DESCRIPTION, EXPECTED_OUTPUT
+from tasks.analyze_market_demand.analyze_market_demand import create_analyze_market_demand_task, DESCRIPTION, EXPECTED_OUTPUT
 from crewai import Task
-from tools.mock_agent import create_mock_agent
+from tools.mock_agent.mock_agent import create_mock_agent
 
 def test_create_analyze_market_demand_task():
     # Create a mock agent using the helper function

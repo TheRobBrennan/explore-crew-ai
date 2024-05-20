@@ -1,6 +1,6 @@
-from tasks.create_business_plan import create_business_plan_task, DESCRIPTION, EXPECTED_OUTPUT
+from tasks.create_business_plan.create_business_plan import create_business_plan_task, DESCRIPTION, EXPECTED_OUTPUT
 from crewai import Task
-from tools.mock_agent import create_mock_agent
+from tools.mock_agent.mock_agent import create_mock_agent
 
 def test_create_business_plan_task():
     # Create a mock agent using the helper function

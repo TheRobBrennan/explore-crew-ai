@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock, PropertyMock
-from tools.mock_agent import create_mock_agent
+from tools.mock_agent.mock_agent import create_mock_agent
 from crewai import Agent
 
 def test_create_mock_agent():
