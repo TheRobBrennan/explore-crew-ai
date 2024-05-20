@@ -15,11 +15,6 @@ def create_crew():
     analyze_technology_requirements = create_analyze_technology_requirements_task(technologist)
     create_business_plan = create_business_plan_task(business_consultant)
 
-    # Debug prints
-    print(f"Created task: analyze_market_demand")
-    print(f"Created task: analyze_technology_requirements")
-    print(f"Created task: create_business_plan")
-
     crew = Crew(
         agents=[market_research_analyst, technologist, business_consultant],
         tasks=[analyze_market_demand, analyze_technology_requirements, create_business_plan],
