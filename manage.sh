@@ -6,8 +6,8 @@ set -e
 # Check if APP_DIR and APP_SCRIPT environment variables are set; default to hello-world
 # APP_DIR="myappdir" APP_SCRIPT="myscript.py" ./manage.sh
 
-# Experiment 1
-: ${APP_DIR:="apps/crewAI/experiment-1"}
+# Experiment 1: Use a team of three agents to evaluate a proposed idea for a business and generate a business plan.
+: ${APP_DIR:="apps/create-business-plan"}
 : ${APP_SCRIPT:="main.py"}
 
 # Define the directory for the virtual environment

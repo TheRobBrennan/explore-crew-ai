@@ -1,9 +1,9 @@
 import os
 from unittest.mock import patch, MagicMock
-from tools.load_environment_variables import load_env_variables
+from tools.load_environment_variables.load_environment_variables import load_env_variables
 
 def test_load_env_variables():
-    with patch('tools.load_environment_variables.load_dotenv') as mock_load_dotenv:
+    with patch('tools.load_environment_variables.load_environment_variables.load_dotenv') as mock_load_dotenv:
         # Call the function
         load_env_variables()
 

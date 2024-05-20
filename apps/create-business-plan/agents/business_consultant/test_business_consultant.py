@@ -1,13 +1,13 @@
 from unittest.mock import patch
-from agents.market_research_analyst import create_market_research_analyst, ROLE, GOAL, BACKSTORY
-from tools.normalize_whitespace import normalize_whitespace
+from agents.business_consultant.business_consultant import create_business_consultant, ROLE, GOAL, BACKSTORY
+from tools.normalize_whitespace.normalize_whitespace import normalize_whitespace
 
-def test_create_market_research_analyst():
-    with patch('agents.market_research_analyst.Agent') as MockAgent:
+def test_create_business_consultant():
+    with patch('agents.business_consultant.business_consultant.Agent') as MockAgent:
         mock_agent_instance = MockAgent.return_value
         
         # Call the function
-        agent = create_market_research_analyst()
+        agent = create_business_consultant()
 
         # Check if the Agent class was instantiated once with the correct arguments
         expected_role = normalize_whitespace(ROLE)
