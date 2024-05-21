@@ -20,6 +20,7 @@ def create_crew():
 
     # Create the crew
     crew = Crew(
+
         # The agents in the crew
         agents=[market_research_analyst, technologist, business_consultant],
 
