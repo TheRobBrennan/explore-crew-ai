@@ -2,7 +2,7 @@
 
 **DISCLAIMER: This code is provided as-is. While I have made an effort to prevent against unexpected billing of external APIs (including mocking external API calls in unit tests), by running this code you agree to not hold the author liable for any charges or costs incurred.**
 
-This example uses CrewAI to orchestrate three agents - a business consultant, a market research analyst, and a technologist - to work together on evaluating an idea for a startup company and generating a business plan.
+This example uses [CrewAI](https://www.crewai.com/) to orchestrate three agents - a business consultant, a market research analyst, and a technologist - to work together on evaluating an idea for a startup company and generating a business plan.
 
 ![](./__screenshots__/b05582d4-c820-4405-92a5-d66d1fe6f602.png)
 
@@ -31,6 +31,80 @@ Assuming you have Python installed on your development machine, you can run the 
 
 ## What's in this example?
 
+At a high level, we are using [CrewAI](https://www.crewai.com/) to:
+
+- Assemble a crew of three agents to collaborate and work towards achieving a specific goal (a business plan for a proposed product)
+- Define agents that have the following specialties
+  - Business Development Consultant
+  - Market Research Analyst
+  - Technologist
+- Define tasks that specific agents will be responsible for overseeing and completing
+  - Analyze market demand
+  - Analyze technology requirements
+  - Create a business plan
+
+Our agents and tasks have been constructed in such a way that we can define them and test them:
+
+- Agents are structured so that multiline constants for `ROLE`, `GOAL`, and `BACKSTORY` can be defined
+
+```python
+# apps/create-business-plan/agents/business_consultant/business_consultant.py
+from crewai import Agent
+
+# Use multiline constants for defining our agent
+ROLE = """
+    Business Development Consultant
+"""
+
+GOAL = """
+    Evaluate and advise on the business model, scalability, and potential revenue streams to ensure long-term sustainability and profitability.
+"""
+
+BACKSTORY = """
+    You are a seasoned professional with expertise in shaping business strategies. Your insight is essential for turning innovative ideas into viable 
+    business models. You have a keen understanding of various industries and are adept at identifying and developing potential revenue streams. 
+    Your experience in scalability ensures that a business can grow without compromising its values or operational efficiency. Your advice is not just
+    about immediate gains but building a resilient and adaptable business that can thrive in a changing market.
+"""
+
+# Agent: Business Development Consultant
+def create_business_consultant():
+    return Agent(
+        role=ROLE.strip(),
+        goal=GOAL.strip(),
+        backstory=BACKSTORY.strip(),
+        verbose=True,
+        allow_delegation=True,
+    )
+
+```
+
+- Tasks are structured so that multiline constants for `DESCRIPTION` and `EXPECTED_OUTPUT` can be defined
+
+```python
+# apps/create-business-plan/tasks/analyze_market_demand/analyze_market_demand.py
+from crewai import Task
+
+# Multiline constants for task description and expected output
+DESCRIPTION = """
+    Analyze the market demand for plugs for holes in Crocs (shoes) so that this iconic footwear looks less like Swiss cheese. 
+    Write a detailed report describing the ideal customer and how to reach the broadest possible audience. The report has to be concise, 
+    with at least ten bullet points, and address the most critical areas when marketing this type of business.
+"""
+
+EXPECTED_OUTPUT = """
+    A detailed report outlining the market demand for the product, the ideal customer profile, and a marketing strategy to reach the broadest possible audience.        
+"""
+
+def create_analyze_market_demand_task(agent):
+    return Task(
+        description=DESCRIPTION,
+        agent=agent,
+        expected_output=EXPECTED_OUTPUT
+    )
+
+```
+
 ### Tests
 
 I have written tests using [pytest](https://docs.pytest.org/) to validate the code functions as designed.
@@ -40,10 +114,6 @@ Unit tests have been written to mock calls to external LLMs (such as OpenAI) so 
 Having said that, please review the tests before running this code to ensure that you are not unexpectedly hitting the live OpenAI endpoints and incurring charges for running unit tests.
 
 ### Project structure
-
-At a high level, we are using CrewAI to:
-
-- Assemble a crew of three agents to collaborate and work towards achieving a specific goal (a business plan for a proposed product)
 
 .
 ├── README.md
@@ -85,6 +155,8 @@ At a high level, we are using CrewAI to:
     └── normalize_whitespace
         ├── normalize_whitespace.py
         └── test_normalize_whitespace.py
+
+## DEMO: An example run using OpenAI ChatGPT 4
 
 ## Credits
 
