@@ -113,49 +113,6 @@ Unit tests have been written to mock calls to external LLMs (such as OpenAI) so 
 
 Having said that, please review the tests before running this code to ensure that you are not unexpectedly hitting the live OpenAI endpoints and incurring charges for running unit tests.
 
-### Project structure
-
-.
-├── README.md
-├── **screenshots**
-│   └── Images for this README
-├── agents
-│   ├── business_consultant
-│   │   ├── business_consultant.py
-│   │   └── test_business_consultant.py
-│   ├── market_research_analyst
-│   │   ├── market_research_analyst.py
-│   │   └── test_market_research_analyst.py
-│   └── technologist
-│       ├── technologist.py
-│       └── test_technologist.py
-├── crew
-│   ├── create_crew.py
-│   └── test_create_crew.py
-├── main.py
-├── requirements.txt
-├── tasks
-│   ├── analyze_market_demand
-│   │   ├── analyze_market_demand.py
-│   │   └── test_analyze_market_demand.py
-│   ├── analyze_technology_requirements
-│   │   ├── analyze_technology_requirements.py
-│   │   └── test_analyze_technology_requirements.py
-│   └── create_business_plan
-│       ├── create_business_plan.py
-│       └── test_create_business_plan.py
-├── test_main.py
-└── tools
-    ├── load_environment_variables
-    │   ├── load_environment_variables.py
-    │   └── test_load_environment_variables.py
-    ├── mock_agent
-    │   ├── mock_agent.py
-    │   └── test_mock_agent.py
-    └── normalize_whitespace
-        ├── normalize_whitespace.py
-        └── test_normalize_whitespace.py
-
 ## DEMO: An example run using OpenAI ChatGPT 4
 
 REMEMBER: Our goal with this Crew is to generate a business plan for our startup idea - beginning with having the Marketing Research Analyst analyze the demand for our product before coordinating with the Technologist and Business Development Consultant.
