@@ -1,5 +1,5 @@
 import os
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from tools.load_environment_variables.load_environment_variables import load_env_variables
 
 def test_load_env_variables():

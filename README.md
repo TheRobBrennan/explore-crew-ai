@@ -1,91 +1,25 @@
 # Welcome
 
-This project will explore getting started developing with [Python](https://www.python.org) as quickly as possible using [Visual Studio Code](https://code.visualstudio.com).
+This project explores working with [Python](https://www.python.org/) and [CrewAI](https://www.crewai.com/) to assemble a crew of AI agents—powered by large language models (LLMs) such as OpenAI ChatGPT 4—to work together and achieve a common goal.
 
-## Local development
+**IMPORTANT: Using OpenAI will incur actual costs when running this code.**
 
-If you are using Python for development, the `manage.sh` script provides several utility commands to streamline common tasks:
+For example, a single run of the `create-business-plan` example cost me **$0.79**.
 
-- `./manage.sh setup` - **Set up the environment and start the application:** This command prepares the development environment by creating a virtual environment in the `.venv` directory (if it doesn't exist). If a `requirements.txt` file is present in the specified app directory (default is `apps/hello_world`), the dependencies listed will be installed. After setting up the environment, the application script (default is `hello_world.py`) is executed.
-- `./manage.sh start` - **Start the application:** This command ensures that the virtual environment is set up, activates it, and then runs the specified application script. After execution, the virtual environment is deactivated.
-- `./manage.sh test` - **Run tests:** This command ensures that the virtual environment is set up and then runs the tests using pytest. If you want to test with coverage, use the `--coverage` flag.
-- `./manage.sh test --coverage` - **Run tests with coverage:** This command runs all tests and generates a coverage report. The report is generated in the `htmlcov` directory, and the index page of the report is automatically opened in your default browser.
-- `./manage.sh destroy` - **Clean up the environment:** This command removes the `.venv` virtual environment, effectively deleting all the installed packages and configurations. It's useful when you want to reset your development environment.
+For more details, please see the [OpenAI Developer Documentation](https://platform.openai.com/docs/overview).
 
-Note: You can customize the app directory and script by setting the `APP_DIR` and `APP_SCRIPT` environment variables, respectively. For instance:
+## Getting started
 
-```sh
-APP_DIR="myappdir" APP_SCRIPT="myscript.py" ./manage.sh
-```
+Our first (and so far only) example uses CrewAI to orchestrate three agents - a business consultant, a market research analyst, and a technologist - to work together on evaluating an idea for a startup company and generating a business plan.
 
-This would use `myappdir` as the app directory and `myscript.py` as the application script.
+This example was inspired by [Maya Akim](https://www.youtube.com/@maya-akim)'s video - [How I Made AI Assistants Do My Work For Me: CrewAI](https://www.youtube.com/watch?v=kJvXT25LkwA) - and significantly enhanced to reflect my tastes in implementing a modular design that is validated with unit tests.
 
-### For JavaScript Developers
+Please copy `apps/create-business-plan/.env.sample` to `apps/create-business-plan/.env` so you can supply a valid OpenAI API key and any other desired environment variables.
 
-If you're more familiar with JavaScript development and have `npm` installed, we've made it easier for you to work with this Python project. There are several helper scripts defined in the `package.json` file which are wrappers around the above `manage.sh` commands:
+Once you've done that, let's take a look at the project-specific [README](./apps/create-business-plan/README.md)
 
-- `npm run setup` - Sets up the environment and starts the application. Equivalent to `./manage.sh setup`.
+## Additional resources
 
-- `npm run start` - Starts the application. Equivalent to `./manage.sh start`.
+If you would like to dive into advanced ways you can work with this project, please see [DEVELOP.md](./DEVELOP.md)
 
-- `npm run test` - Runs all tests. Equivalent to `./manage.sh test`.
-
-- `npm run test:coverage` - Runs tests and generates a coverage report. Equivalent to `./manage.sh test --coverage`.
-
-- `npm run destroy` - Cleans up the environment by removing the virtual environment. Equivalent to `./manage.sh destroy`.
-
-- `npm repo` - Opens the project repository in your default browser. This is a quick way to access the source code, documentation, and other related resources.
-
-Utilizing these npm scripts, you can manage the Python application using commands you're familiar with from the JavaScript ecosystem.
-
-## Python cheat sheet
-
-If you're just getting started with Python, here are snippets of commands that you may find helpful to get you up and running in no time.
-
-```sh
-# Verify that you have Python installed on your machine
-% python3 --version
-Python 3.11.1
-
-# Create a new virtual environment for the project
-% python3 -m venv .venv
-
-# Select your new environment by using the Python: Select Interpreter command in VS Code
-#   - Enter the path: ./.venv/bin/python
-
-# Activate your virtual environment
-% source .venv/bin/activate
-(.venv) %
-
-# PREFERRED: Install the packages from requirements.txt
-(.venv) % pip install -r requirements.txt
-
-# Install Python packages in a virtual environment
-# (.venv) % pip install <package_name>
-
-# Install Python testing packages
-# (.venv) % pip install pytest pytest-asyncio pytest-cov
-
-# When you are ready to generate a requirements.txt file
-# (.venv) % pip freeze > requirements.txt
-
-# Uninstall the package from your virtual environment
-# (.venv) % pip uninstall simplejson
-
-# Remove the dependency from requirements.txt if it exists
-# (.venv) % pip uninstall -r requirements.txt
-
-# To run unit tests:
-# (.venv) % pytest
-
-# To run unit tests and automatically view the HTML coverage report on macOS:
-# (.venv) % pytest --cov=. --cov-report=html && open htmlcov/index.html
-
-# To run a single unit test
-# (.venv) % pytest test_something.py
-
-# Deactivate your virtual environment
-(.venv) % deactivate
-% 
-
-```
+If you are getting your feet wet exploring Python and local development, please feel free to take a look at the [PYTHON_CHEATSHEET](./PYTHON_CHEATSHEET.md).
