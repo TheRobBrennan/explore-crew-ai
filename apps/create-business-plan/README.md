@@ -6,9 +6,9 @@ This example uses [CrewAI](https://www.crewai.com/) to orchestrate three agents 
 
 ![](./__screenshots__/b05582d4-c820-4405-92a5-d66d1fe6f602.png)
 
-Here is a [demo](https://www.youtube.com/watch?v=qhHwLD01jXk) of the CrewAI agents in action - which took just under five minutes to complete in this example:
+Here is a [demo](https://www.youtube.com/watch?v=qhHwLD01jXk) of the CrewAI agents in action - which took just under five minutes to complete in this example.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qhHwLD01jXk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![SCREENCAST: CrewAI demo of three agents working on creating a business plan](https://img.youtube.com/vi/qhHwLD01jXk/0.jpg)](https://www.youtube.com/watch?v=qhHwLD01jXk)
 
 ## TL;DR
 
