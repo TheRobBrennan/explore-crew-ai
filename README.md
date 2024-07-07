@@ -14,7 +14,7 @@ Our first (and so far only) example uses CrewAI to orchestrate three agents - a 
 
 This example was inspired by [Maya Akim](https://www.youtube.com/@maya-akim)'s video - [How I Made AI Assistants Do My Work For Me: CrewAI](https://www.youtube.com/watch?v=kJvXT25LkwA) - and significantly enhanced to reflect my tastes in implementing a modular design that is validated with unit tests.
 
-Please copy `apps/create-business-plan/.env.sample` to `apps/create-business-plan/.env` so you can supply a valid OpenAI API key and any other desired environment variables.
+Please copy `/.env.sample` to `/.env` to optionally specify a folder and initial file for the main script to run as well as copy `apps/create-business-plan/.env.sample` to `apps/create-business-plan/.env` so you can supply a valid OpenAI API key and any other desired environment variables.
 
 Once you've done that, let's take a look at the project-specific [README](./apps/create-business-plan/README.md)
 
