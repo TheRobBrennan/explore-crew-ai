@@ -3,9 +3,12 @@
 # Ensure the script exits if any command fails
 set -e
 
-# Check if APP_DIR and APP_SCRIPT environment variables are set; default to hello-world
-# APP_DIR="myappdir" APP_SCRIPT="myscript.py" ./manage.sh
+# Load environment variables from .env file if it exists
+if [ -f .env ]; then
+    export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
+fi
 
+# Default to this application if no environment variables are provided
 # Experiment 1: Use a team of three agents to evaluate a proposed idea for a business and generate a business plan.
 : ${APP_DIR:="apps/create-business-plan"}
 : ${APP_SCRIPT:="main.py"}
@@ -39,7 +42,7 @@ setup_venv() {
     fi
 }
 
-# Function to start the FastAPI server
+# Function to start the application
 run_app() {
     # Ensure the virtual environment is set up
     setup_venv
