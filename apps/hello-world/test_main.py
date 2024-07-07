@@ -1,7 +1,7 @@
 # apps/hello-world/test_main.py
 
-import subprocess
+from main import hello_world
 
 def test_hello_world():
-    result = subprocess.run(["python3", "main.py"], capture_output=True, text=True)
-    assert result.stdout.strip() == "Hello, world!"
+    assert hello_world() == "Hello, world!"
+
